@@ -61,6 +61,54 @@ class AbilitiesRestBridge {
 						'label'       => __( 'Delete Product', 'woocommerce' ),
 						'description' => __( 'Permanently delete a product from the store. This action cannot be undone.', 'woocommerce' ),
 					),
+					array(
+						'id'          => 'woocommerce/product-batch',
+						'operation'   => 'batch',
+						'label'       => __( 'Batch Create, Update and Delete Multiple Products', 'woocommerce' ),
+						'description' => __( 'Create new products, update existing ones, and permanently delete others. Deleting products cannot be undone.', 'woocommerce' ),
+					),
+				),
+			),
+			array(
+				'controller' => \WC_REST_Product_Variations_Controller::class,
+				'route'      => '/wc/v3/products',
+				'abilities'  => array(
+					array(
+						'id'          => 'woocommerce/product-variations-list',
+						'operation'   => 'list',
+						'label'       => __( 'List All Product Variations', 'woocommerce' ),
+						'description' => __( 'Retrieve a paginated list of a product\'s variations, with optional filters for status, price range, and other attributes.', 'woocommerce' ),
+					),
+					array(
+						'id'          => 'woocommerce/product-variations-get',
+						'operation'   => 'get',
+						'label'       => __( 'Get Product Variation', 'woocommerce' ),
+						'description' => __( 'Retrieve detailed information about a single product variation by ID, including price, description, image, and metadata.', 'woocommerce' ),
+					),
+					array(
+						'id'          => 'woocommerce/product-variations-create',
+						'operation'   => 'create',
+						'label'       => __( 'Create Product Variation', 'woocommerce' ),
+						'description' => __( 'Create a new product variation with name, price, description,and other attributes.', 'woocommerce' ),
+					),
+					array(
+						'id'          => 'woocommerce/product-variations-update',
+						'operation'   => 'update',
+						'label'       => __( 'Update Product Variation', 'woocommerce' ),
+						'description' => __( 'Update an existing product variation by modifying its attributes such as price, stock, description, or metadata.', 'woocommerce' ),
+					),
+					array(
+						'id'          => 'woocommerce/product-variations-delete',
+						'operation'   => 'delete',
+						'label'       => __( 'Delete Product Variation', 'woocommerce' ),
+						'description' => __( 'Permanently delete a product variation from the store. This action cannot be undone.', 'woocommerce' ),
+					),
+					array(
+						'id'          => 'woocommerce/product-variations-batch',
+						'operation'   => 'batch',
+						'label'       => __( 'Batch Create, Update and Delete Multiple Variations of a Same Variable Product', 'woocommerce' ),
+						'description' => __( 'Create new variations, update existing ones, and permanently delete others. All changes must be for the same variable product. Deleting variations cannot be undone.', 'woocommerce' ),
+					),
 				),
 			),
 			array(
